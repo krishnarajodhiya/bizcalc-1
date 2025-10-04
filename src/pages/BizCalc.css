@@ -1,0 +1,697 @@
+/* BizCalc Dashboard Styles */
+
+.bizcalc-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%),
+    linear-gradient(90deg, #ffffff 0%, #f0f0f0 50%, #ffffff 100%);
+  background-size: 100% 100%, 40px 40px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  color: #212529;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.bizcalc-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  animation: gridMove 20s linear infinite;
+}
+
+.bizcalc-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.05) 30%,
+    transparent 70%
+  );
+  pointer-events: none;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.bizcalc-container:hover::after {
+  opacity: 1;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(40px, 40px);
+  }
+}
+
+/* Main Content */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: white;
+}
+
+.page-title h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #212529, #495057);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.page-title p {
+  font-size: 1.25rem;
+  color: #495057;
+  font-weight: 400;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Input Section */
+.input-section {
+  order: 1;
+}
+
+.input-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.input-card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.2),
+    0 15px 15px -5px rgba(0, 0, 0, 0.1);
+}
+
+.input-card h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #212529;
+}
+
+.input-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .input-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.875rem;
+}
+
+.input-group input {
+  padding: 0.75rem 1rem;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  color: #212529;
+  backdrop-filter: blur(10px);
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+.input-group input[type="number"]::-webkit-outer-spin-button,
+.input-group input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  background: rgba(255, 255, 255, 1);
+}
+
+.input-group input::placeholder {
+  color: #6c757d;
+}
+
+/* Results Section */
+.results-section {
+  order: 2;
+}
+
+.results-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.metric-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2),
+    0 10px 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+.metric-card.revenue {
+  border-left: 4px solid #10b981;
+}
+
+.metric-card.cost {
+  border-left: 4px solid #ef4444;
+}
+
+.metric-card.profit {
+  border-left: 4px solid #10b981;
+}
+
+.metric-card.loss {
+  border-left: 4px solid #ef4444;
+}
+
+.metric-card.margin {
+  border-left: 4px solid #8b5cf6;
+}
+
+.metric-card.roi {
+  border-left: 4px solid #f59e0b;
+}
+
+.metric-card.breakeven {
+  border-left: 4px solid #3b82f6;
+}
+
+.metric-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.metric-content h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6c757d;
+  margin-bottom: 0.25rem;
+}
+
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #212529;
+}
+
+/* Charts Section */
+.charts-section {
+  grid-column: 1 / -1;
+  order: 3;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .charts-section {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.chart-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.chart-card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.2),
+    0 15px 15px -5px rgba(0, 0, 0, 0.1);
+}
+
+.chart-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #212529;
+}
+
+.chart-container {
+  height: 300px;
+  width: 100%;
+}
+
+/* Removed problematic pie chart container styles */
+
+.no-data-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  color: #6c757d;
+}
+
+.no-data-message p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.no-data-message p:first-child {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Download Section */
+.download-section {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.download-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.metric-card,
+.chart-card,
+.input-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+
+  .page-title h1 {
+    font-size: 2rem;
+  }
+
+  .page-title p {
+    font-size: 1rem;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .input-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .input-card,
+  .metric-card,
+  .chart-card {
+    padding: 1.5rem;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .metric-card {
+    padding: 1rem;
+  }
+
+  .metric-card .metric-icon {
+    font-size: 1.5rem;
+  }
+
+  .metric-value {
+    font-size: 1.25rem;
+  }
+
+  .charts-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .chart-container {
+    height: 250px;
+  }
+
+  .download-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 0.75rem;
+  }
+
+  .page-title h1 {
+    font-size: 1.75rem;
+  }
+
+  .page-title p {
+    font-size: 0.9rem;
+  }
+
+  .input-card,
+  .metric-card,
+  .chart-card {
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  .input-card h2,
+  .chart-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .input-group input {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.9rem;
+  }
+
+  .metric-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .metric-card .metric-icon {
+    font-size: 1.25rem;
+  }
+
+  .metric-value {
+    font-size: 1.125rem;
+  }
+
+  .chart-container {
+    height: 200px;
+  }
+
+  .download-btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  /* Reduce grid animation on mobile for better performance */
+  .bizcalc-container::before {
+    animation: none;
+  }
+
+  /* Simplify background on mobile */
+  .bizcalc-container {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  }
+}
+
+/* Light mode support */
+@media (prefers-color-scheme: light) {
+  .bizcalc-container {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%),
+      linear-gradient(90deg, #ffffff 0%, #f0f0f0 50%, #ffffff 100%);
+    background-size: 100% 100%, 40px 40px;
+    color: #212529;
+  }
+
+  .bizcalc-container::before {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+      linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bizcalc-container::after {
+    background: radial-gradient(
+      circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.05) 30%,
+      transparent 70%
+    );
+  }
+
+  .input-card,
+  .metric-card,
+  .chart-card {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #212529;
+  }
+
+  .input-card:hover,
+  .metric-card:hover,
+  .chart-card:hover {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2),
+      0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  .input-card h2,
+  .chart-card h3 {
+    color: #212529;
+  }
+
+  .input-group label {
+    color: #495057;
+  }
+
+  .input-group input {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(0, 0, 0, 0.2);
+    color: #212529;
+  }
+
+  .input-group input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    background: rgba(255, 255, 255, 1);
+  }
+
+  .input-group input::placeholder {
+    color: #6c757d;
+  }
+
+  .metric-content h3 {
+    color: #6c757d;
+  }
+
+  .metric-value {
+    color: #212529;
+  }
+
+  .page-title h1 {
+    background: linear-gradient(135deg, #212529, #495057);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .page-title p {
+    color: #495057;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .bizcalc-container {
+    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%),
+      linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+    background-size: 100% 100%, 40px 40px;
+  }
+
+  .bizcalc-container::before {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.05) 1px,
+        transparent 1px
+      ),
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bizcalc-container::after {
+    background: radial-gradient(
+      circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.03) 30%,
+      transparent 70%
+    );
+  }
+
+  .input-card,
+  .metric-card,
+  .chart-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .input-card:hover,
+  .metric-card:hover,
+  .chart-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .input-card h2,
+  .chart-card h3 {
+    color: #ffffff;
+  }
+
+  .input-group label {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .input-group input {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+  }
+
+  .input-group input:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .metric-content h3 {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .metric-value {
+    color: #ffffff;
+  }
+
+  .page-title h1 {
+    background: linear-gradient(135deg, #ffffff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+  }
+
+  .page-title p {
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+}

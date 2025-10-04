@@ -1,6 +1,25 @@
 # BizCalc AI - Business Idea Calculator
 
+**Turn your business idea into numbers with real-time financial insights.**
+
 A modern, intelligent business calculator that helps entrepreneurs quickly calculate and visualize the financial outcome of any business idea based on key assumptions.
+
+## 🖼️ Preview
+
+![BizCalc AI Dashboard](./preview.png)
+
+> Real-time financial visualization and smart business metrics in one dashboard.
+
+## 💼 Why BizCalc AI?
+
+Many entrepreneurs struggle to estimate profitability before starting a business.  
+BizCalc AI simplifies that process with **interactive, real-time financial insights** — no Excel formulas required.
+
+🧾 **Workflow Overview**
+1️⃣ Enter business details  
+2️⃣ Calculate instantly  
+3️⃣ Visualize financial metrics  
+4️⃣ Export & share your results
 
 ## 🚀 Features
 
@@ -27,6 +46,15 @@ A modern, intelligent business calculator that helps entrepreneurs quickly calcu
 - **Cost Breakdown Pie Chart**: Visual representation of cost distribution
 - **Revenue vs Cost Bar Chart**: Comparative analysis of financial metrics
 - **Interactive Tooltips**: Detailed information on hover
+
+## ⚙️ Tech Highlights
+
+- **React 19 + TypeScript** → Strong typing and modern React features
+- **Recharts** → Interactive and responsive financial charts
+- **Vite** → Lightning-fast dev and build performance
+- **Lucide Icons** → Clean, scalable vector icons
+- **Framer Motion** → Smooth animations and transitions
+- **React Router DOM** → Seamless single-page navigation
 
 ## 🛠️ Tech Stack
 
