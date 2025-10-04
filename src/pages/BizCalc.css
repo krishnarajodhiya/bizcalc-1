@@ -98,6 +98,19 @@
   grid-template-columns: 1fr;
 }
 
+/* Ensure proper spacing between sections */
+.input-section,
+.results-section,
+.charts-section {
+  margin-bottom: 2rem;
+}
+
+.input-section:last-child,
+.results-section:last-child,
+.charts-section:last-child {
+  margin-bottom: 0;
+}
+
 @media (min-width: 1024px) {
   .dashboard-grid {
     grid-template-columns: 1fr 1fr;
@@ -412,27 +425,29 @@
 
   .dashboard-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
   .input-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .input-card,
   .metric-card,
   .chart-card {
     padding: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .results-grid {
     grid-template-columns: 1fr;
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
   .metric-card {
-    padding: 1rem;
+    padding: 1.25rem;
+    margin-bottom: 0.75rem;
   }
 
   .metric-card .metric-icon {
@@ -445,7 +460,11 @@
 
   .charts-section {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
+  }
+
+  .chart-card {
+    margin-bottom: 1.5rem;
   }
 
   .chart-container {
@@ -471,11 +490,16 @@
     font-size: 0.9rem;
   }
 
+  .dashboard-grid {
+    gap: 1.5rem;
+  }
+
   .input-card,
   .metric-card,
   .chart-card {
     padding: 1rem;
     border-radius: 1rem;
+    margin-bottom: 1.25rem;
   }
 
   .input-card h2,
@@ -488,10 +512,16 @@
     font-size: 0.9rem;
   }
 
+  .results-grid {
+    gap: 1.25rem;
+  }
+
   .metric-card {
     flex-direction: column;
     text-align: center;
     gap: 0.5rem;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
   }
 
   .metric-card .metric-icon {
@@ -500,6 +530,14 @@
 
   .metric-value {
     font-size: 1.125rem;
+  }
+
+  .charts-section {
+    gap: 1.5rem;
+  }
+
+  .chart-card {
+    margin-bottom: 1.25rem;
   }
 
   .chart-container {
