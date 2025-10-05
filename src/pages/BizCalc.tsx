@@ -1,5 +1,12 @@
 import { useState, useEffect } from "react";
-import { Download } from "lucide-react";
+import {
+  Download,
+  Calculator,
+  TrendingUp,
+  DollarSign,
+  Target,
+  Scale,
+} from "lucide-react";
 import jsPDF from "jspdf";
 import "./BizCalc.css";
 import {
@@ -409,19 +416,28 @@ export const BizCalc = () => {
 
   return (
     <div className="bizcalc-container">
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-content">
+          <h1 className="hero-title">
+            Calculate Your Business Idea Smartly 💡
+          </h1>
+          <p className="hero-subtitle">
+            Get instant financial insights for your business venture
+          </p>
+        </div>
+      </section>
+
       {/* Main Content */}
       <main className="main-content">
-        {/* Page Title */}
-        <div className="page-title">
-          <h1>Calculate Your Business Idea Smartly 💡</h1>
-          <p>Get instant financial insights for your business venture</p>
-        </div>
-
-        <div className="dashboard-grid">
-          {/* Input Section */}
-          <div className="input-section">
-            <div className="input-card">
-              <h2>Business Parameters</h2>
+        <div className="dashboard-layout">
+          {/* Business Parameters Section */}
+          <div className="parameters-section">
+            <div className="parameters-card">
+              <h2 className="parameters-title">
+                <Calculator className="parameters-icon" />
+                Business Parameters
+              </h2>
               <div className="input-grid">
                 <div className="input-group">
                   <label>Business Name</label>
@@ -527,15 +543,25 @@ export const BizCalc = () => {
                   />
                 </div>
               </div>
+              <button className="calculate-btn">
+                <Calculator className="calculate-icon" />
+                Calculate Metrics
+              </button>
             </div>
           </div>
 
-          {/* Results Section */}
+          {/* Results Dashboard */}
           {results && (
-            <div className="results-section">
-              <div className="results-grid">
+            <div className="results-dashboard">
+              <h2 className="dashboard-title">
+                <TrendingUp className="dashboard-icon" />
+                Financial Metrics
+              </h2>
+              <div className="metrics-grid">
                 <div className="metric-card revenue">
-                  <div className="metric-icon">💰</div>
+                  <div className="metric-icon">
+                    <DollarSign className="metric-icon-svg" />
+                  </div>
                   <div className="metric-content">
                     <h3>Total Revenue</h3>
                     <p className="metric-value">
