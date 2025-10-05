@@ -1,12 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  Download,
-  Calculator,
-  TrendingUp,
-  DollarSign,
-  Target,
-  Scale,
-} from "lucide-react";
+import { Download, Calculator, TrendingUp, DollarSign } from "lucide-react";
 import jsPDF from "jspdf";
 import "./BizCalc.css";
 import {
