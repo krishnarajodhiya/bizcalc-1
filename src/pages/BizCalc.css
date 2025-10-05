@@ -10,7 +10,7 @@
   color: #212529;
   position: relative;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: visible;
 }
 
 .bizcalc-container::before {
@@ -65,6 +65,7 @@
   padding: 2rem;
   position: relative;
   z-index: 1;
+  min-height: calc(100vh - 4rem);
 }
 
 .page-title {
@@ -404,6 +405,7 @@
   padding: 2rem;
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.875rem;
+  margin-top: 2rem;
 }
 
 /* Animations */
