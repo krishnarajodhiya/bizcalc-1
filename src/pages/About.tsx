@@ -2,30 +2,32 @@ import { CheckCircle, Code, Palette, Rocket } from "lucide-react";
 
 export const About = () => {
   const technologies = [
-    "React 18",
+    "React 19",
     "TypeScript",
     "Vite",
-    "Tailwind CSS",
-    "React Router",
+    "Custom CSS",
+    "React Router DOM",
     "Lucide React",
+    "Recharts",
+    "Framer Motion",
   ];
 
   const team = [
     {
-      name: "John Doe",
-      role: "Frontend Developer",
+      name: "Krishna Jii",
+      role: "Founder & Developer",
       image:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
     },
     {
-      name: "Jane Smith",
-      role: "UI/UX Designer",
+      name: "BizCalc AI",
+      role: "Business Intelligence",
       image:
         "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
     },
     {
-      name: "Mike Johnson",
-      role: "Full Stack Developer",
+      name: "Financial Engine",
+      role: "Calculation Core",
       image:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
     },
@@ -38,11 +40,10 @@ export const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              About <span className="text-primary-600">ReactApp</span>
+              About <span className="text-primary-600">BizCalc AI</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              We're passionate about creating modern, efficient, and beautiful
-              web applications that provide exceptional user experiences.
+              We're passionate about creating intelligent business tools that help entrepreneurs make data-driven decisions with real-time financial insights.
             </p>
           </div>
         </div>
@@ -57,15 +58,10 @@ export const About = () => {
                 Our Mission
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                To empower developers with modern tools and best practices that
-                make building web applications faster, more reliable, and more
-                enjoyable.
+                To empower entrepreneurs with intelligent business tools that make financial planning accessible, accurate, and actionable for everyone.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                We believe in the power of clean code, thoughtful design, and
-                continuous learning. Our goal is to help developers create
-                applications that not only work well but also provide delightful
-                user experiences.
+                We believe in the power of data-driven decisions, intuitive design, and continuous innovation. Our goal is to help business owners understand their financial metrics and make informed decisions with confidence.
               </p>
               <div className="flex flex-wrap gap-4">
                 {technologies.map((tech, index) => (
@@ -90,12 +86,12 @@ export const About = () => {
                   <div className="text-primary-100">Vite Powered</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold mb-2">🎨</div>
-                  <div className="text-primary-100">Tailwind CSS</div>
+                  <div className="text-3xl font-bold mb-2">📊</div>
+                  <div className="text-primary-100">Recharts</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold mb-2">🚀</div>
-                  <div className="text-primary-100">Modern React</div>
+                  <div className="text-3xl font-bold mb-2">🎨</div>
+                  <div className="text-primary-100">Custom CSS</div>
                 </div>
               </div>
             </div>
@@ -166,7 +162,7 @@ export const About = () => {
               Meet Our Team
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              The talented individuals behind ReactApp.
+              The talented individuals behind BizCalc AI.
             </p>
           </div>
 
