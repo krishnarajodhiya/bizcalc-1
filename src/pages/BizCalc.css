@@ -38,7 +38,7 @@ html {
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #4fc3f7, #2196f3);
+  background: linear-gradient(135deg, #2d3748, #4a5568);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -81,12 +81,12 @@ html {
 }
 
 .parameters-card {
-  background: rgba(30, 30, 30, 0.95);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(20px);
   border-radius: 20px;
   padding: 2.5rem;
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
-  border: 2px solid rgba(79, 195, 247, 0.4);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(74, 85, 104, 0.3);
   transition: all 0.3s ease;
   margin-bottom: 2rem;
   animation: slideInLeft 0.8s ease-out;
@@ -94,32 +94,32 @@ html {
 
 .parameters-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 25px 50px -10px rgba(79, 195, 247, 0.2);
-  border-color: rgba(79, 195, 247, 0.4);
+  box-shadow: 0 25px 50px -10px rgba(74, 85, 104, 0.2);
+  border-color: rgba(74, 85, 104, 0.4);
 }
 
 .parameters-title {
   font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  color: #ffffff;
+  color: #2d3748 !important;
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .parameters-icon {
   width: 2rem;
   height: 2rem;
-  color: #4fc3f7;
+  color: #4a5568;
 }
 
 .calculate-btn {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  background: linear-gradient(135deg, #4fc3f7, #2196f3);
+  background: linear-gradient(135deg, #4a5568, #2d3748);
   color: white;
   padding: 1rem 2rem;
   border-radius: 15px;
@@ -128,7 +128,7 @@ html {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 20px -5px rgba(79, 195, 247, 0.3);
+  box-shadow: 0 10px 20px -5px rgba(74, 85, 104, 0.3);
   margin-top: 1.5rem;
   width: 100%;
   justify-content: center;
@@ -137,8 +137,8 @@ html {
 
 .calculate-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 15px 30px -5px rgba(79, 195, 247, 0.4);
-  background: linear-gradient(135deg, #2196f3, #1976d2);
+  box-shadow: 0 15px 30px -5px rgba(74, 85, 104, 0.4);
+  background: linear-gradient(135deg, #2d3748, #1a202c);
 }
 
 .calculate-btn:active {
@@ -164,33 +164,34 @@ html {
 
 .input-group label {
   font-weight: 600;
-  color: #e0e0e0;
+  color: #4a5568 !important;
   font-size: 0.875rem;
 }
 
 .input-group input {
   padding: 0.75rem 1rem;
-  border: 2px solid rgba(79, 195, 247, 0.3);
+  border: 2px solid rgba(74, 85, 104, 0.3);
   border-radius: 0.75rem;
   font-size: 1rem;
   transition: all 0.3s ease;
-  background: rgba(50, 50, 50, 0.8);
-  color: #ffffff;
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #2d3748 !important;
   -webkit-appearance: none;
   -moz-appearance: textfield;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .input-group input:focus {
   outline: none;
-  border-color: #4fc3f7;
-  box-shadow: 0 0 0 3px rgba(79, 195, 247, 0.3);
-  background: rgba(60, 60, 60, 0.9);
+  border-color: #4a5568;
+  box-shadow: 0 0 0 3px rgba(74, 85, 104, 0.2);
+  background: rgba(255, 255, 255, 1) !important;
+  color: #2d3748 !important;
   transform: translateY(-1px);
 }
 
 .input-group input::placeholder {
-  color: #a0a0a0;
+  color: #a0aec0;
 }
 
 /* Results Dashboard */
@@ -213,7 +214,7 @@ html {
 .dashboard-icon {
   width: 2rem;
   height: 2rem;
-  color: #4fc3f7;
+  color: #4a5568;
 }
 
 .metrics-grid {
@@ -307,14 +308,14 @@ html {
 .metric-icon-svg {
   width: 2.5rem;
   height: 2.5rem;
-  color: #4fc3f7;
+  color: #4a5568;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: drop-shadow(0 2px 4px rgba(79, 195, 247, 0.2));
+  filter: drop-shadow(0 2px 4px rgba(74, 85, 104, 0.2));
 }
 
 .metric-card:hover .metric-icon-svg {
   transform: scale(1.1);
-  color: #2196f3;
+  color: #2d3748;
 }
 
 .metric-content h3 {
@@ -348,7 +349,7 @@ html {
   border-radius: 1.5rem;
   padding: 2rem;
   box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(79, 195, 247, 0.2);
+  border: 1px solid rgba(74, 85, 104, 0.2);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -374,8 +375,8 @@ html {
 
 .chart-card:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 25px 50px -10px rgba(79, 195, 247, 0.2);
-  border-color: rgba(79, 195, 247, 0.4);
+  box-shadow: 0 25px 50px -10px rgba(74, 85, 104, 0.2);
+  border-color: rgba(74, 85, 104, 0.4);
 }
 
 .chart-card:hover::before {
@@ -452,7 +453,7 @@ html {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  background: linear-gradient(135deg, #4a5568, #2d3748);
   color: white;
   padding: 1rem 2rem;
   border-radius: 1rem;
@@ -461,7 +462,7 @@ html {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 15px -3px rgba(74, 85, 104, 0.2);
   min-height: 44px;
   min-width: 44px;
   touch-action: manipulation;

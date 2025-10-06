@@ -37,7 +37,7 @@ export const Navbar = () => {
               <div className="h-8 w-8 bg-primary-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">B</span>
               </div>
-              <span className="ml-2 text-xl font-bold text-white dark:text-gray-100 font-poppins">
+              <span className="ml-2 text-xl font-bold text-gray-900 dark:text-gray-100 font-poppins">
                 BizCalc
               </span>
             </Link>
@@ -54,15 +54,15 @@ export const Navbar = () => {
                   to={item.path}
                   className={`group relative flex items-center px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
                     isActive
-                      ? "text-white dark:text-gray-100 bg-gradient-to-r from-white/25 to-white/15 dark:from-green-500/20 dark:to-green-400/10 backdrop-blur-sm border border-white/30 dark:border-green-400/30 shadow-lg dark:shadow-green-500/20"
-                      : "text-white/80 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 hover:bg-white/15 dark:hover:bg-green-500/10 hover:border-white/20 dark:hover:border-green-400/20 border border-transparent hover:shadow-lg dark:hover:shadow-green-500/10"
+                      ? "text-gray-900 dark:text-gray-100 bg-gradient-to-r from-gray-200/50 to-gray-100/30 dark:from-green-500/20 dark:to-green-400/10 backdrop-blur-sm border border-gray-300 dark:border-green-400/30 shadow-lg dark:shadow-green-500/20"
+                      : "text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100/50 dark:hover:bg-green-500/10 hover:border-gray-200 dark:hover:border-green-400/20 border border-transparent hover:shadow-lg dark:hover:shadow-green-500/10"
                   }`}
                 >
                   <Icon className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform duration-300" />
                   <span className="relative">
                     {item.label}
                     {isActive && (
-                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white dark:bg-green-400 rounded-full animate-pulse"></span>
+                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gray-900 dark:bg-green-400 rounded-full animate-pulse"></span>
                     )}
                   </span>
                 </Link>
@@ -76,7 +76,7 @@ export const Navbar = () => {
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="group relative inline-flex items-center justify-center p-3 rounded-xl text-white/80 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 hover:bg-white/15 dark:hover:bg-green-500/10 hover:border-white/20 dark:hover:border-green-400/20 border border-transparent hover:shadow-lg dark:hover:shadow-green-500/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white/20 dark:focus:ring-green-400/50 transition-all duration-300 transform hover:scale-105"
+              className="group relative inline-flex items-center justify-center p-3 rounded-xl text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100/50 dark:hover:bg-green-500/10 hover:border-gray-200 dark:hover:border-green-400/20 border border-transparent hover:shadow-lg dark:hover:shadow-green-500/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-200 dark:focus:ring-green-400/50 transition-all duration-300 transform hover:scale-105"
             >
               {isOpen ? (
                 <X className="h-6 w-6" />
@@ -90,7 +90,7 @@ export const Navbar = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-2 sm:px-3 glass-card border-t border-white/20 dark:border-green-400/20 backdrop-blur-xl">
+            <div className="px-2 pt-2 pb-3 space-y-2 sm:px-3 glass-card border-t border-gray-200 dark:border-green-400/20 backdrop-blur-xl">
               {navItems.map((item) => {
                 const Icon = item.icon;
                 const isActive = location.pathname === item.path;
@@ -101,15 +101,15 @@ export const Navbar = () => {
                     onClick={() => setIsOpen(false)}
                     className={`group relative flex items-center px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 transform hover:scale-105 ${
                       isActive
-                        ? "text-white dark:text-gray-100 bg-gradient-to-r from-white/25 to-white/15 dark:from-green-500/20 dark:to-green-400/10 backdrop-blur-sm border border-white/30 dark:border-green-400/30 shadow-lg dark:shadow-green-500/20"
-                        : "text-white/80 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 hover:bg-white/15 dark:hover:bg-green-500/10 hover:border-white/20 dark:hover:border-green-400/20 border border-transparent hover:shadow-lg dark:hover:shadow-green-500/10"
+                        ? "text-gray-900 dark:text-gray-100 bg-gradient-to-r from-gray-200/50 to-gray-100/30 dark:from-green-500/20 dark:to-green-400/10 backdrop-blur-sm border border-gray-300 dark:border-green-400/30 shadow-lg dark:shadow-green-500/20"
+                        : "text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100/50 dark:hover:bg-green-500/10 hover:border-gray-200 dark:hover:border-green-400/20 border border-transparent hover:shadow-lg dark:hover:shadow-green-500/10"
                     }`}
                   >
                     <Icon className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300" />
                     <span className="relative">
                       {item.label}
                       {isActive && (
-                        <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white dark:bg-green-400 rounded-full animate-pulse"></span>
+                        <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gray-900 dark:bg-green-400 rounded-full animate-pulse"></span>
                       )}
                     </span>
                   </Link>
